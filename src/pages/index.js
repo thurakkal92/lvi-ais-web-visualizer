@@ -3,7 +3,7 @@ import { LoadingContext, SidebarContext, TrackerDataContext } from '../context';
 import TrackerPage from './TrackerPage';
 
 function Page() {
-    const trackerDataContext = useState({ data: [], selectedId: '' })
+    const trackerDataContext = useState({ data: [], selectedId: null })
     const loaderContext = useState(false)
     const sidebarContext = useState(true)
     return (

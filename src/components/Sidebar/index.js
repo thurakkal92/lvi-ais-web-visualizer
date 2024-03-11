@@ -11,30 +11,22 @@ import InfoItem from './InfoItem'
 import { removeAtFromText } from '../../utils'
 import Flag from '../atoms/Flag';
 import Collapse from '../atoms/Collapse';
-import BlipAnimation from '../atoms/Blip';
 
 /**
  * Sidebar - Show all the ASI information
  */
 
-function Sidebar(props) {
-    const { open } = props
+function Sidebar() {
     const [ trackerData, setTrackerData ] = useContext(TrackerDataContext)
     const [ showSidebar ] = useContext(SidebarContext)
     const { data, selectedId } = trackerData
     const [ loading ] = useContext(LoadingContext)
-    const [ activeIdx, setActiveIdx ] = useState()
+    const [ activeIdx, setActiveIdx ] = useState(null)
     const sidebarRef = useRef(null)
     const itemRef = useRef(null)
 
-    const scrollToRef = (ref, offsetTop) => {
-        console.log(offsetTop, 'offsetTop')
-        ref.current.scroll({ top: offsetTop, behavior: 'smooth' })
-    };
-
     useEffect(() => {
         setActiveIdx(selectedId)
-        console.log(itemRef, 'itemRef')
         if (itemRef.current) {
             const offsetTop = itemRef.current.offsetTop
             sidebarRef.current.scrollTo({
@@ -55,7 +47,6 @@ function Sidebar(props) {
         }
 
     }
-
 
     function renderVesselDetails() {
         if (loading) return <Loader />
@@ -83,7 +74,6 @@ function Sidebar(props) {
                         </div>
                         <div className='flex flex-middle'>
                             <Flag countryCode={item.flag} />
-
                             <Expand className={idx === activeIdx ? 'rotate-180' : ''} />
                         </div>
 
@@ -102,7 +92,6 @@ function Sidebar(props) {
                                         <div className='p-absolute z-10 h-3 w-20 rotate-90 t-2 l-50p'>
                                             <Boat />
                                         </div>
-
                                     </div>
                                     <div className='pl-2'><Location height={28} width={28} /></div>
                                 </div>
@@ -115,7 +104,6 @@ function Sidebar(props) {
                                         <div className='fs-caption-2 fw-400 c-text-light ta-right'>Arrival</div>
                                         <div className='fs-caption-2 fw-400 c-black'>{item.eta}</div>
                                     </div>
-
                                 </div>
                             </div>
                             <div className='pt-4 pb-2'>
@@ -138,9 +126,9 @@ function Sidebar(props) {
         )
     }
     return (
-        <div ref={sidebarRef} className={classNames('bg-white mt-13 z-10 p-relative bs-border br bc-grey-10 p-4 oy-auto t-all', {
+        <div ref={sidebarRef} className={classNames('bg-white mt-13 z-10 p-relative bs-border br bc-grey-10 px-3 py-4 oy-auto t-all', {
             'o-0': !showSidebar
-        })} style={{ width: 365, height: 'calc(100vh - 52px)', transform: `translateX(${showSidebar ? 0 : '-365px'})` }}>
+        })} style={{ width: 340, height: 'calc(100vh - 52px)', transform: `translateX(${showSidebar ? 0 : '-340px'})` }}>
             {renderVesselDetails()}
         </div>
     )

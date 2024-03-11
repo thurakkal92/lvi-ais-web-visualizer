@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { ReactComponent as DoubleArrowRight } from "../../assets/images/double-arrow-right.svg";
 import { SidebarContext } from '../../context';
 import IconButton from '../atoms/IconButton';

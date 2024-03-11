@@ -91,7 +91,7 @@ function Map() {
                 .addTo(mapBox);
             mapBox.setCenter(position);
             mapBox.setZoom(2)
-            if (selectedId) {
+            if (typeof selectedId === 'number' || selectedId) {
                 setShowSidebar(true)
                 const selectedData = data[ selectedId ]
                 const updatedHeading = selectedData.heading

@@ -12,15 +12,15 @@ function Flag(props) {
     const { countryCode } = props
     const flagName = countryCode.toLowerCase();
     const flagMap = {
-        'ar': <ArFlag height={20} width={28} />,
-        'bs': <BsFlag height={20} width={28} />,
-        'mh': <MhFlag height={20} width={28} />,
-        'uy': <UyFlag height={20} width={28} />,
-        'ng': <NgFlag height={20} width={28} />,
-        'tg': <TgFlag height={20} width={28} />,
-        'us': <UsFlag height={20} width={28} />,
-        'th': <ThFlag height={20} width={28} />,
-        'hk': <HkFlag height={20} width={28} />,
+        'ar': <ArFlag height={16} width={20} />,
+        'bs': <BsFlag height={16} width={20} />,
+        'mh': <MhFlag height={16} width={20} />,
+        'uy': <UyFlag height={16} width={20} />,
+        'ng': <NgFlag height={16} width={20} />,
+        'tg': <TgFlag height={16} width={20} />,
+        'us': <UsFlag height={16} width={20} />,
+        'th': <ThFlag height={16} width={20} />,
+        'hk': <HkFlag height={16} width={20} />,
     }
 
     return (<div className='mx-2 o-hidden br-4 bw-2 bc-white ba flex flex-center'>
