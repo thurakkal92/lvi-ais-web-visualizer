@@ -53,7 +53,7 @@ function TrackerPage() {
 
                 <h2 className='fs-7 fw-700 pt-10'>How to run the application locally</h2>
                 <ul className='pl-8 pt-4'>
-                    <li className='py-1'>Download and extract the zip file attached</li>
+                    <li className='py-1'>Clone or download. <a className='c-brand fw-500' href='https://github.com/thurakkal92/lvi-ais-web-visualizer' target='_blank'>Code Repo</a></li>
                     <li className='py-1'>Run <code>npm install</code>  and <code>npm run start</code></li>
                 </ul>
                 <h2 className='fs-7 fw-700 pt-10'>Technologies used</h2>
